@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px #888888;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #red {
+            background-color: red;
+            color: white;
+        }
+
+        #blue {
+            background-color: blue;
+            color: white;
+        }
+
+        #green {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="hello">Hello, Waqar</h1>
+    <div id="container">
+        <button id="red" data-color="red">Red</button>
+        <button id="blue" data-color="blue">Blue</button>
+        <button id="green" data-color="green">Green</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('button').forEach(function(button) {
+                button.onclick = function() {
+                    document.querySelector("#hello").style.color = button.dataset.color;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
